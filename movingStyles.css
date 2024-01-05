@@ -1,0 +1,35 @@
+
+:root {
+    --enemyHealth: red;
+    --enemyHealth-background: rgb(57, 57, 57);
+}
+
+.enemy-health1::after, .current-health1::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.enemy-health1, .current-health1 {
+    width: 100%;
+    height: 35px;
+    border-radius: 0px;
+    color: rgb(254, 254, 254);
+    position: relative;
+  }
+  .current-health::-webkit-progress-value {
+    background-color: #2d7b30; /* Set the color of the value bar itself */
+    border-radius: 0px;
+  }
+  
+  /* Customize the appearance of the value bar color */
+  .enemy-health1::-webkit-progress-value {
+    background-color: #ab3535; /* Set the color of the value bar itself */
+    border-radius: 0px;
+  }
+
+  .hidden {
+    display: none;
+  }
