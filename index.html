@@ -1,201 +1,266 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="movingStyles.css">
-    <title>Increment Village</title>
-</head>
-<body>
-    <header>
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-sm offset-1">
-                    <h1>Incremental Village</h1>
-                </div>
-                <div class="col-sm-3">
-                    <div class="row nav-bar">
-                        <div class="col-sm"><a href="">Contact</a></div>
-                        <div class="col-sm"><a href="">Info</a></div>
-                        <div class="col-sm"><a href="">Github</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="container-fluid container-box text-center">
-            <div class="row top-image-box">
-                <div class="col-sm-12">
-                    <img class="image-fluid" src="/images/DALL·E 2023-12-27 23.12.17 - A watercolor landscape painting of a small, peaceful medieval town. The town is serene, with no signs of battle. The architecture is distinctly mediev.png" alt="" width="100%" height="400">
-                </div>
-            </div>
-            <div class="row section1 health-bars">
-                <progress class="col-sm-4 offset-2 enemy-health1" value="100" max="100" data-label="Enemy Health:" id="enemy-health-bar"></progress>
-               <progress class="col-sm-4 current-health1" value="100" max="100" data-label="Current Health:" id="current-health-bar"></progress>
-            </div>
-            <div class="row section2 unit-table">
-                <div class="col-sm offset-">villagers
-                    <br>
-                    <span id="villager-count"></span>
-                </div>
-                <div class="col-sm">Soldiers
-                    <br>
-                    <span id="soldier-count"></span>
-                </div>
-                <div class="col-sm">Magicians
-                    <br>
-                    <span id="magician-count"></span>
-                </div>
-                <div class="col-sm">Blacksmiths
-                    <br>
-                    <span id="blacksmith-count"></span>
-                </div>
-                <div class="col-sm">Explorers
-                    <br>
-                    <span id="explorer-count"></span>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="container-fluid bottom-container section3">
-            <div class="row">
-                <div class="col-md-8 player-actions ">
-                    <div class="action recruit-screen text-center">
-                        <h2>Actions</h2>
-                        <br>
-                        <div class="row" id="button-soldiers">
-                            <div class="col-sm-1">Recruit:</div>
-                            <div class="col-sm-1 offset-1"><button class="btn buy-button">10</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">100</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">1000</button></div>
-                            <div class="col-sm-2 offset-1">Soldiers</div>
-                        </div>
-                        <br>
-                        <div class="row" id="button-blacksmiths">
-                            <div class="col-sm-1">Recruit:</div>
-                            <div class="col-sm-1 offset-1"><button class="btn buy-button">10</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">100</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">1000</button></div>
-                            <div class="col-sm-2 offset-1">Blacksmiths</div>
-                        </div>
-                        <br>
-                        <div class="row" id="button-magicians">
-                            <div class="col-sm-1">Recruit:</div>
-                            <div class="col-sm-1 offset-1"><button class="btn buy-button">10</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">100</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">1000</button></div>
-                            <div class="col-sm-2 offset-1">Magicians</div>
-                        </div>
-                        <br>
-                        <div class="row" id="button-explorers">
-                            <div class="col-sm-1">Recruit:</div>
-                            <div class="col-sm-1 offset-1"><button class="btn buy-button">10</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">100</button></div>
-                            <div class="col-sm-1"><button class="btn buy-button">1000</button></div>
-                            <div class="col-sm-2 offset-1">Explorers</div>
-                        </div>
-                    </div>
-                    <div class="action town-screen">
-                        <br>
-                        <h2 class="text-center">Actions</h2>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm"><button class="btn buy-button">Build Farm (100 famers)</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm"><button class="btn buy-button">Build Fort (100 Soldiers)</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm"><button class="btn buy-button">Build Magic Tower (100 Magicians)</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm"><button class="btn buy-button">Build Smithery (100 Blacksmiths)</button></div>
-                        </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="styles.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="movingStyles.css"
+		/>
+		<title>Increment Village</title>
+	</head>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div class="align-items-center row">
+					<div class="col-sm offset-1">
+						<h1>Incremental Village</h1>
+					</div>
+					<div class="col-sm-3">
+						<div class="nav-bar row">
+							<div class="col-sm"><a href="">Contact</a></div>
+							<div class="col-sm"><a href="">Info</a></div>
+							<div class="col-sm"><a href="">Github</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="text-center container-box container-fluid">
+				<div class="top-image-box row">
+					<div class="col-sm-12">
+						<img
+							class="image-fluid"
+							src="/images/DALL·E 2023-12-27 23.12.17 - A watercolor landscape painting of a small, peaceful medieval town. The town is serene, with no signs of battle. The architecture is distinctly mediev.png"
+							alt=""
+							width="100%"
+							height="400"
+						/>
+					</div>
+				</div>
+				<div class="health-bars row section1">
+					<progress
+						class="col-sm-4 enemy-health1 offset-2"
+						value="100"
+						max="100"
+						data-label="Enemy Health:"
+						id="enemy-health-bar"
+					></progress>
+					<progress
+						class="col-sm-4 current-health1"
+						value="100"
+						max="100"
+						data-label="Current Health:"
+						id="current-health-bar"
+					></progress>
+				</div>
+				<div class="row section2 unit-table">
+					<div class="col-sm offset-">
+						villagers
+						<br />
+						<span id="villager-count"></span>
+					</div>
+					<div class="col-sm">
+						Soldiers
+						<br />
+						<span id="soldier-count"></span>
+					</div>
+					<div class="col-sm">
+						Magicians
+						<br />
+						<span id="magician-count"></span>
+					</div>
+					<div class="col-sm">
+						Blacksmiths
+						<br />
+						<span id="blacksmith-count"></span>
+					</div>
+					<div class="col-sm">
+						Explorers
+						<br />
+						<span id="explorer-count"></span>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="bottom-container container-fluid section3">
+				<div class="row">
+					<div class="col-md-8 player-actions">
+						<div class="text-center action recruit-screen">
+							<h2>Actions</h2>
+							<br />
+							<div
+								class="row"
+								id="button-soldiers"
+							>
+								<div class="col-sm-1">Recruit:</div>
+								<div class="col-sm-1 offset-1">
+									<button class="btn buy-button">10</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">100</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">1000</button>
+								</div>
+								<div class="col-sm-2 offset-1">Soldiers</div>
+							</div>
+							<br />
+							<div
+								class="row"
+								id="button-blacksmiths"
+							>
+								<div class="col-sm-1">Recruit:</div>
+								<div class="col-sm-1 offset-1">
+									<button class="btn buy-button">10</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">100</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">1000</button>
+								</div>
+								<div class="col-sm-2 offset-1">Blacksmiths</div>
+							</div>
+							<br />
+							<div
+								class="row"
+								id="button-magicians"
+							>
+								<div class="col-sm-1">Recruit:</div>
+								<div class="col-sm-1 offset-1">
+									<button class="btn buy-button">10</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">100</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">1000</button>
+								</div>
+								<div class="col-sm-2 offset-1">Magicians</div>
+							</div>
+							<br />
+							<div
+								class="row"
+								id="button-explorers"
+							>
+								<div class="col-sm-1">Recruit:</div>
+								<div class="col-sm-1 offset-1">
+									<button class="btn buy-button">10</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">100</button>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn buy-button">1000</button>
+								</div>
+								<div class="col-sm-2 offset-1">Explorers</div>
+							</div>
+						</div>
+						<div class="action town-screen">
+							<br />
+							<h2 class="text-center">Actions</h2>
+							<br />
+							<div class="row">
+								<div class="col-sm">
+									<button class="btn buy-button">
+										Build Farm (100 famers)
+									</button>
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-sm">
+									<button class="btn buy-button">
+										Build Fort (100 Soldiers)
+									</button>
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-sm">
+									<button class="btn buy-button">
+										Build Magic Tower (100 Magicians)
+									</button>
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-sm">
+									<button class="btn buy-button">
+										Build Smithery (100 Blacksmiths)
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="row"></div>
+						<br />
+						<div class="action game-nav">
+							<div class="row">
+								<div class="col-sm">
+									<button class="btn-block btn buy-button">Build</button>
+								</div>
+								<div class="col-sm">
+									<button class="btn-block btn buy-button">Recruit</button>
+								</div>
+								<div class="col-sm">
+									<button class="btn-block btn buy-button">Hunt</button>
+								</div>
+							</div>
+						</div>
+						<br />
+					</div>
+					<div class="right-side-panel col-md-4">
+						<div class="events-heading-box row">
+							<h3>Events</h3>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 text-container">
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+								<p>Test Event</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
-                    </div>
-                    <div class="row">
-                        
-                    </div>
-                    <br>
-                    <div class="action game-nav">
-                        <div class="row">
-                            <div class="col-sm">
-                                <button class="btn buy-button btn-block">
-                                    Build
-                                </button>
-                            </div>    
-                            <div class="col-sm">
-                                <button class="btn buy-button btn-block">
-                                    Recruit
-                                </button>
-                            </div>    
-                            <div class="col-sm">
-                                <button class="btn buy-button btn-block">
-                                    Hunt
-                                </button>
-                            </div>    
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-md-4 right-side-panel">
-                    <div class="row events-heading-box">
-                        <h3>Events</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-container">
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                            <p>
-                                make sure to do it right if not then it is all in vain make sure to make it right if not it will all be in vain.
-                            </p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-</body>
+		<script src="script.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
